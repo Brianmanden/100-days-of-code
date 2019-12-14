@@ -5,7 +5,7 @@ import './index.css';
 class Square extends React.Component{
     render(){
         return (
-            <button className="square">
+            <button className="square" onClick={function(){ alert('click handler'); }}>
                 {this.props.value}
             </button>
         );
