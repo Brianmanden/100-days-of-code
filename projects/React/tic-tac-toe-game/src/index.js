@@ -5,7 +5,7 @@ import './index.css';
 function Square(props){
     return(
         <button
-            className="square"
+            className={props.currentMove ? "square currentMoveSquare" : "square"}
             onClick={props.onClick}>
             {props.value}
         </button>
@@ -16,6 +16,7 @@ class Board extends React.Component{
     renderSquare(i){
         return(
             <Square
+                currentMove={this.props.currentMove === i ? true : false}
                 value={this.props.squares[i]}
                 onClick={() => this.props.onClick(i)}
             />
@@ -75,7 +76,6 @@ class Game extends React.Component{
     }
 
     jumpTo(step){
-        console.log(step);
         this.setState({
             stepNumber: step,
             xIsNext: (step % 2) === 0,
@@ -85,8 +85,13 @@ class Game extends React.Component{
     render(){
         const history = this.state.history;
         const current = history[this.state.stepNumber];
+        const previous = this.state.stepNumber === 0 ? history[0] : history[this.state.stepNumber - 1];
         const winner = calculateWinner(current.squares);
 
+        // HERE !!
+        // compare current and previous and find element that differs.
+        // Use this index number as currentMove in Board
+        
         const moves = history.map((step, move) => {
             const desc = move ?
                 'Go to move #' + move :
@@ -108,6 +113,7 @@ class Game extends React.Component{
             <div className="game">
                 <div className="game-board">
                     <Board
+                        currentMove={2}
                         squares={current.squares}
                         onClick={(i) => this.handleClick(i)}
                     />
