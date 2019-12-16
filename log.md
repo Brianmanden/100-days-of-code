@@ -5,11 +5,11 @@
 
 ### Day 2: 2019-12-16
 
-**Today´s Progress:**
+**Today´s Progress:** I am working on implementing this first optional improvement - display location for each move when clicking history list item. Added a CSS class to better mark which square is the current one.
 
-**Thoughts:**
+**Thoughts:** I am stuck on how to pass down and use arrays as parameters to a method. They seem to be passed as arrays but I cannot loop over them.
 
-**Link to work:**
+**Link to work:** [https://github.com/Brianmanden/100-days-of-code/commit/d321ccb23493fb10176f138ca67b03844c4a8af3](https://github.com/Brianmanden/100-days-of-code/commit/d321ccb23493fb10176f138ca67b03844c4a8af3) | [All commits](https://github.com/Brianmanden/100-days-of-code/commits/master)
 
 ---
 
