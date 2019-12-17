@@ -33,7 +33,7 @@ ol, ul{
 }
 
 .currentMoveSquare{
-    background:red;
+    background: #eee;
 }
 
 .square:focus{

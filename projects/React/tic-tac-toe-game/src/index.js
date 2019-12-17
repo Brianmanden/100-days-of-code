@@ -5,7 +5,7 @@ import './index.css';
 function Square(props){
     return(
         <button
-            className={props.currentMove ? "square currentMoveSquare" : "square"}
+            className={props.currentMove === true ? "square currentMoveSquare" : "square"}
             onClick={props.onClick}>
             {props.value}
         </button>
@@ -16,7 +16,7 @@ class Board extends React.Component{
     renderSquare(i){
         return(
             <Square
-                currentMove={this.props.currentMove === i ? true : false}
+                currentMove={this.props.currentMove === i}
                 value={this.props.squares[i]}
                 onClick={() => this.props.onClick(i)}
             />
@@ -53,26 +53,33 @@ class Game extends React.Component{
             history: [{
                 squares: Array(9).fill(null),
             }],
+            coords: [[null, null]],
             stepNumber: 0,
             xIsNext: true,
         };
     }
 
     handleClick(i){
-        const history = this.state.history.slice(0, this.state.stepNumber +1);
+        const history = this.state.history.slice(0, this.state.stepNumber + 1);
         const current = history[history.length - 1];
         const squares = current.squares.slice();
+        const coords = this.state["coords"];
+        const currCoord = calcCoords(i);
+
         if(calculateWinner(squares) || squares[i]){
             return;
         }
         squares[i] = this.state.xIsNext ? 'X' : 'O';
+        console.log(this.state, "-1-");
         this.setState({
             history: history.concat([{
                 squares: squares,
             }]),
+            coords: coords.push(currCoord),
             stepNumber: history.length,
             xIsNext: !this.state.xIsNext,
         });
+        console.log(this.state, "-2-");
     }
 
     jumpTo(step){
@@ -87,11 +94,13 @@ class Game extends React.Component{
         const current = history[this.state.stepNumber];
         const previous = this.state.stepNumber === 0 ? history[0] : history[this.state.stepNumber - 1];
         const winner = calculateWinner(current.squares);
-
+        const currentMove = compareSteps(current, previous);
+        const coords = this.state.coords[this.state.stepNumber];
+        // 'Go to move #' + move + ' coords: (' + coords[0] + ',' + coords[1] + ')' :
+        console.log(this.state);
         // HERE !!
-        // compare current and previous and find element that differs.
-        // Use this index number as currentMove in Board
-        
+        // Coords array changes from multidimensional array to a number ... why ? :)
+
         const moves = history.map((step, move) => {
             const desc = move ?
                 'Go to move #' + move :
@@ -113,7 +122,7 @@ class Game extends React.Component{
             <div className="game">
                 <div className="game-board">
                     <Board
-                        currentMove={2}
+                        currentMove={currentMove}
                         squares={current.squares}
                         onClick={(i) => this.handleClick(i)}
                     />
@@ -145,6 +154,21 @@ function calculateWinner(squares){
         }
     }
     return null;
+}
+
+function compareSteps(current, previous){
+    let currentMove;
+    for(let i = 0; i < current.squares.length; i++){
+        if(current.squares[i] === previous.squares[i]){
+            continue;
+        }
+        currentMove = i;
+    }
+    return currentMove;
+}
+
+function calcCoords(index){
+    return [(index % 3), Math.floor(index / 3)];
 }
 
 // ----------
