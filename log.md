@@ -3,6 +3,18 @@
 
 ## Days in descending order
 
+---
+
+### Day 3: 2019-12-17
+
+**Today´s Progress:** Added styles to current square.
+
+**Thoughts:** I got confused about what the first optional task said. I tried to implement a mark of the current square - the task asked for a coordinate set on each step in the history list. I tried to implement that... WIP :)
+
+**Link to work:** (https://github.com/Brianmanden/100-days-of-code/commit/88bd8bcd560597f7f38eec60383074ae981c5d6f)[https://github.com/Brianmanden/100-days-of-code/commit/88bd8bcd560597f7f38eec60383074ae981c5d6f] |  [All commits](https://github.com/Brianmanden/100-days-of-code)
+
+---
+
 ### Day 2: 2019-12-16
 
 **Today´s Progress:** I am working on implementing this first optional improvement - display location for each move when clicking history list item. Added a CSS class to better mark which square is the current one.
@@ -42,5 +54,7 @@
 **Thoughts:**
 
 **Link to work:** [My 100 Days of code-repo](https://github.com/Brianmanden/100-days-of-code)
+
+---
 
 >End - Day snippe
