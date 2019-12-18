@@ -19,7 +19,7 @@
 
 >End - Day snippet
 
-### Day X: 2019-12-18
+### Day 4: 2019-12-18
 
 **Today´s Progress:** Today I helped @tbaglioni with [this commit](https://github.com/tbaglioni/100-days-of-code/commit/ccfe907cab3d4ffc4b7b50532040a887ba996c5f). I haven´t made any progress on yesterdays issue .. yet :) UPDATE: I changed a few styles on the buttons. UPDATE: I changed the code so it now shows coordinates on the history buttons ... yeaaiihh :)
 
