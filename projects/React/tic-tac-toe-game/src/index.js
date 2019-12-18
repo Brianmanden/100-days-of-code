@@ -53,7 +53,9 @@ class Game extends React.Component{
             history: [{
                 squares: Array(9).fill(null),
             }],
-            coords: [[null, null]],
+            coordinates: [{
+                coords: [null, null],
+            }],
             stepNumber: 0,
             xIsNext: true,
         };
@@ -63,23 +65,24 @@ class Game extends React.Component{
         const history = this.state.history.slice(0, this.state.stepNumber + 1);
         const current = history[history.length - 1];
         const squares = current.squares.slice();
-        const coords = this.state["coords"];
+        const coordinates = this.state.coordinates.slice(0, this.state.stepNumber + 1);
         const currCoord = calcCoords(i);
 
         if(calculateWinner(squares) || squares[i]){
             return;
         }
+
         squares[i] = this.state.xIsNext ? 'X' : 'O';
-        console.log(this.state, "-1-");
         this.setState({
             history: history.concat([{
                 squares: squares,
             }]),
-            coords: coords.push(currCoord),
+            coordinates: coordinates.concat([{
+                coords: currCoord,
+            }]),
             stepNumber: history.length,
             xIsNext: !this.state.xIsNext,
         });
-        console.log(this.state, "-2-");
     }
 
     jumpTo(step){
@@ -95,15 +98,11 @@ class Game extends React.Component{
         const previous = this.state.stepNumber === 0 ? history[0] : history[this.state.stepNumber - 1];
         const winner = calculateWinner(current.squares);
         const currentMove = compareSteps(current, previous);
-        const coords = this.state.coords[this.state.stepNumber];
-        // 'Go to move #' + move + ' coords: (' + coords[0] + ',' + coords[1] + ')' :
-        console.log(this.state);
-        // HERE !!
-        // Coords array changes from multidimensional array to a number ... why ? :)
 
         const moves = history.map((step, move) => {
+            const coords = this.state.coordinates[move];
             const desc = move ?
-                'Go to move #' + move :
+                'Go to move #' + move + ' coords: (' + (coords["coords"][0] + 1) + ',' + (coords["coords"][1] + 1) + ')' :
                 'Go to game start';
             return(
                 <li key={move}>
@@ -111,6 +110,7 @@ class Game extends React.Component{
                 </li>
             );
         });
+
         let status;
         if(winner){
             status = 'Winner: ' + winner;
@@ -129,7 +129,7 @@ class Game extends React.Component{
                 </div>
                 <div className="game-info">
                     <div>{status}</div>
-                    <ol>{moves}</ol>
+                    <ul>{moves}</ul>
                 </div>
             </div>
         );
