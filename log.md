@@ -21,11 +21,13 @@
 
 ### Day X: 2019-12-18
 
-**Today´s Progress:** Today I helped @tbaglioni with [this commit](https://github.com/tbaglioni/100-days-of-code/commit/ccfe907cab3d4ffc4b7b50532040a887ba996c5f). I haven´t made any progress on yesterdays issue .. yet :)
+**Today´s Progress:** Today I helped @tbaglioni with [this commit](https://github.com/tbaglioni/100-days-of-code/commit/ccfe907cab3d4ffc4b7b50532040a887ba996c5f). I haven´t made any progress on yesterdays issue .. yet :) UPDATE: I changed a few styles on the buttons. UPDATE: I changed the code so it now shows coordinates on the history buttons ... yeaaiihh :)
 
-**Thoughts:** Not many #emptyhead :)
+**Thoughts:** Not many #emptyhead :) UPDATE: Using arrays for coordinates in React state was trouble. Refactoring so it resembles history array/object struture proved to be the solution :)
 
-**Link to work:** [My 100 Days of code-repo](https://github.com/Brianmanden/100-days-of-code)
+**Link to work:** [My 100 Days of code-repo](https://github.com/Brianmanden/100-days-of-code) | 
+[Update styles](https://github.com/Brianmanden/100-days-of-code/commit/f365b7ef144025392afcadf0e538c9729a69cee9) | 
+[Coordinates on buttons](https://github.com/Brianmanden/100-days-of-code/commit/a0b6b9d1e4bb0a190317a31ccecf8130d82b5a4c)
 
 ---
 
