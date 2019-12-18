@@ -5,6 +5,30 @@
 
 ---
 
+>Start - Day snippet
+
+### Day X: 2019-
+
+**Today´s Progress:**
+
+**Thoughts:**
+
+**Link to work:** [My 100 Days of code-repo](https://github.com/Brianmanden/100-days-of-code)
+
+---
+
+>End - Day snippet
+
+### Day X: 2019-12-18
+
+**Today´s Progress:** Today I helped @tbaglioni with [this commit](https://github.com/tbaglioni/100-days-of-code/commit/ccfe907cab3d4ffc4b7b50532040a887ba996c5f). I haven´t made any progress on yesterdays issue .. yet :)
+
+**Thoughts:** Not many #emptyhead :)
+
+**Link to work:** [My 100 Days of code-repo](https://github.com/Brianmanden/100-days-of-code)
+
+---
+
 ### Day 3: 2019-12-17
 
 **Today´s Progress:** Added styles to current square.
@@ -42,19 +66,3 @@
 **Thoughts:** Will add in an hour or so :) ... here they are: Starting learning React isn´t that bad. I got to this step [Lifting State Up](https://reactjs.org/tutorial/tutorial.html#lifting-state-up) .. and I will continue tomorrow.
 
 **Link to work:** [My 100 Days of code-repo](https://github.com/Brianmanden/100-days-of-code)
-
----
-
->Start - Day snippet
-
-### Day X: 2019-
-
-**Today´s Progress:**
-
-**Thoughts:**
-
-**Link to work:** [My 100 Days of code-repo](https://github.com/Brianmanden/100-days-of-code)
-
----
-
->End - Day snippe
