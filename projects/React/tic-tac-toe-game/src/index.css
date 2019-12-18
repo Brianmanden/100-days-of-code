@@ -7,6 +7,20 @@ ol, ul{
     padding-left: 30px;
 }
 
+li{
+    list-style: none;
+    padding: 4px 0;
+}
+
+li button{
+    border-radius: 5px;
+    padding: 5px;
+}
+
+li button:focus{
+    outline: none;
+}
+
 .board-row:after{
     clear: both;
     content: "";
