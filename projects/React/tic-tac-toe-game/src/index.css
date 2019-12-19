@@ -14,7 +14,9 @@ li{
 
 li button{
     border-radius: 5px;
+    cursor: pointer;
     padding: 5px;
+    user-select: none;
 }
 
 li button:focus{
