@@ -26,6 +26,7 @@ class Board extends React.Component{
     render(){
         return(
             <div>
+                <div>{this.props.winningCombination} --- </div>
                 <div className="board-row">
                     {this.renderSquare(0)}
                     {this.renderSquare(1)}
@@ -57,6 +58,7 @@ class Game extends React.Component{
                 coords: [null, null],
             }],
             stepNumber: 0,
+            winningCombination: [null],
             xIsNext: true,
         };
     }
@@ -134,6 +136,7 @@ class Game extends React.Component{
                         currentMove={currentMove}
                         squares={current.squares}
                         onClick={(i) => this.handleClick(i)}
+                        winningCombination={this.state.winningCombination}
                     />
                 </div>
                 <div className="game-info">
@@ -159,6 +162,13 @@ function calculateWinner(squares){
     for(let i=0; i < lines.length; i++){
         const [a, b, c] = lines[i];
         if(squares[a] && squares[a] === squares[b] && squares[a] === squares[c]){
+
+            // HERE: is setting state in a subfunction good practice ?
+            // Are there other ways to accomplish this ?
+            console.log(lines[i]);      
+            // this.setState({
+            //     winningCombination: lines[i],
+            // });
             return squares[a];
         }
     }
