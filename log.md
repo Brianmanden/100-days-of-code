@@ -15,9 +15,19 @@
 
 **Link to work:** [My 100 Days of code-repo](https://github.com/Brianmanden/100-days-of-code)
 
+>End - Day snippet
+
 ---
 
->End - Day snippet
+### Day 5: 2019-12-19
+
+**Today´s Progress:** I helped @tbaglioni a bit with his coding environment and revoked my own terminal back to using canvas again. (No more problems with not being able to break code execution with CTRL + C). Add a few style changes. Implemented optional feature 2 - bold selected history item.
+
+**Thoughts:** Started implementing optional feature 5 and got to think about best practice of setting state in React. Will look into that tomorrow.
+
+**Link to work:** [Repository commits](https://github.com/Brianmanden/100-days-of-code/commits/master)
+
+---
 
 ### Day 4: 2019-12-18
 
@@ -25,8 +35,8 @@
 
 **Thoughts:** Not many #emptyhead :) UPDATE: Using arrays for coordinates in React state was trouble. Refactoring so it resembles history array/object struture proved to be the solution :)
 
-**Link to work:** [My 100 Days of code-repo](https://github.com/Brianmanden/100-days-of-code) | 
-[Update styles](https://github.com/Brianmanden/100-days-of-code/commit/f365b7ef144025392afcadf0e538c9729a69cee9) | 
+**Link to work:** [My 100 Days of code-repo](https://github.com/Brianmanden/100-days-of-code) |
+[Update styles](https://github.com/Brianmanden/100-days-of-code/commit/f365b7ef144025392afcadf0e538c9729a69cee9) |
 [Coordinates on buttons](https://github.com/Brianmanden/100-days-of-code/commit/a0b6b9d1e4bb0a190317a31ccecf8130d82b5a4c)
 
 ---
@@ -37,7 +47,7 @@
 
 **Thoughts:** I got confused about what the first optional task said. I tried to implement a mark of the current square - the task asked for a coordinate set on each step in the history list. I tried to implement that... WIP :)
 
-**Link to work:** (https://github.com/Brianmanden/100-days-of-code/commit/88bd8bcd560597f7f38eec60383074ae981c5d6f)[https://github.com/Brianmanden/100-days-of-code/commit/88bd8bcd560597f7f38eec60383074ae981c5d6f] |  [All commits](https://github.com/Brianmanden/100-days-of-code)
+**Link to work:** [https://github.com/Brianmanden/100-days-of-code/commit/88bd8bcd560597f7f38eec60383074ae981c5d6f](https://github.com/Brianmanden/100-days-of-code/commit/88bd8bcd560597f7f38eec60383074ae981c5d6f) |  [All commits](https://github.com/Brianmanden/100-days-of-code)
 
 ---
 
