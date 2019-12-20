@@ -9,13 +9,23 @@
 
 ### Day X: 2019-
 
+**Today´s Progress:** Stuck on finding a way to set state of the winning combination.
+
+**Thoughts:** I may have to refactor the app to solve the days problem.
+
+**Link to work:** [My 100 Days of code-repo](https://github.com/Brianmanden/100-days-of-code)
+
+>End - Day snippet
+
+---
+
+### Day 6: 2019-12-20
+
 **Today´s Progress:**
 
 **Thoughts:**
 
 **Link to work:** [My 100 Days of code-repo](https://github.com/Brianmanden/100-days-of-code)
-
->End - Day snippet
 
 ---
 
