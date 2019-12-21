@@ -36,9 +36,10 @@ li button:focus{
 .square{
     background: #fff;
     border: 1px solid #999;
+    color: #333;
     float: left;
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 18px;
+    font-weight: 100;
     line-height: 34px;
     height: 34px;
     margin-right: -1px;
@@ -49,11 +50,18 @@ li button:focus{
 }
 
 .currentMoveSquare{
-    background: #eee;
+    color: #000;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .square:focus{
     outline: none;
+}
+
+.winningSquare{
+    background: #eee;
+    font-size: 18px;
 }
 
 .kbd-navigation .square:focus{
