@@ -9,9 +9,9 @@
 
 ### Day X: 2019-
 
-**Today´s Progress:** Stuck on finding a way to set state of the winning combination.
+**Today´s Progress:**
 
-**Thoughts:** I may have to refactor the app to solve the days problem.
+**Thoughts:**
 
 **Link to work:** [My 100 Days of code-repo](https://github.com/Brianmanden/100-days-of-code)
 
@@ -19,11 +19,21 @@
 
 ---
 
+### Day 7: 2019-12-21
+
+**Today´s Progress:** I implemented the fifth optional feature in the tutorial and I refactored a few styles.
+
+**Thoughts:** I am not using React state when setting/getting the winning combination - except from that I am pretty pleased with the outcome. Hmmm.. I might want to find a way to refactor.
+
+**Link to work:** [My 100 Days of code-repo](https://github.com/Brianmanden/100-days-of-code) | [5th optional feature](https://github.com/Brianmanden/100-days-of-code/commit/1d8d9309e07af861f5945429c19c6c9af0a807fd)
+
+---
+
 ### Day 6: 2019-12-20
 
-**Today´s Progress:**
+**Today´s Progress:** Stuck on finding a way to set state of the winning combination.
 
-**Thoughts:**
+**Thoughts:** I may have to refactor the app to solve the days problem.
 
 **Link to work:** [My 100 Days of code-repo](https://github.com/Brianmanden/100-days-of-code)
 
