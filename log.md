@@ -19,6 +19,16 @@
 
 ---
 
+### Day X: 2019-12-22
+
+**Today´s Progress:** Removed mark of winning combination when clicking through items in history list. Helped @tbaglioni with his FTP project. Started looking into how to implement optional feature 4 - loops in loops. Internet suggests using ES6 map method.
+
+**Thoughts:** Tried implementing with two nested loops - will try with map method tomorrow.
+
+**Link to work:** [My 100 Days of code-repo](https://github.com/Brianmanden/100-days-of-code) | [https://github.com/Brianmanden/100-days-of-code/commit/4c24184effc6e2728988c90581b67062041268d5](https://github.com/Brianmanden/100-days-of-code/commit/4c24184effc6e2728988c90581b67062041268d5)
+
+---
+
 ### Day 7: 2019-12-21
 
 **Today´s Progress:** I implemented the fifth optional feature in the tutorial and I refactored a few styles.
