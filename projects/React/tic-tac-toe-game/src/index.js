@@ -63,7 +63,6 @@ class Game extends React.Component{
                 coords: [null, null],
             }],
             stepNumber: 0,
-            winningCombination: [null],
             xIsNext: true,
         };
     }
@@ -171,6 +170,7 @@ function calculateWinner(squares){
             return squares[a];
         }
     }
+    winningCombination = [];
     return null;
 }
 
