@@ -19,7 +19,17 @@
 
 ---
 
-### Day X: 2019-12-22
+### Day 9: 2019-12-23
+
+**Today´s Progress:** Implemented 3rd optional feature - refactoring to using two nested loops instead of hardcoded board.
+
+**Thoughts:** I would rather have used for-loops instead of mapping an array - but then I got a little practice using those :)
+
+**Link to work:** [My 100 Days of code-repo](https://github.com/Brianmanden/100-days-of-code) | [All commits](https://github.com/Brianmanden/100-days-of-code/commits/master)
+
+---
+
+### Day 8: 2019-12-22
 
 **Today´s Progress:** Removed mark of winning combination when clicking through items in history list. Helped @tbaglioni with his FTP project. Started looking into how to implement optional feature 4 - loops in loops. Internet suggests using ES6 map method.
 
