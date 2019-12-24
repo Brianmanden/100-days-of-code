@@ -4,6 +4,30 @@ import './index.css';
 
 let winningCombination = [];
 
+class ToggleHistoryButton extends React.Component{
+    // HERE !
+    state = {
+        sortOrder: true
+    }
+
+    handleClick(){
+        console.log(this.state);        
+        this.setState({
+            sortOrder : this.state.sortOrder ? false : true
+        });
+        console.log(this.state.sortOrder);
+    }
+
+    render(){
+        return(
+            <button
+                onClick={this.handleClick}>
+                {this.state.sortOrder}
+            </button>
+        );
+    }
+}
+
 function Square(props){
     let classNames = props.currentMove === true ? "square currentMoveSquare" : "square";
     classNames += props.winningSquare === true ? " winningSquare" : "";
@@ -121,7 +145,7 @@ class Game extends React.Component{
         if(winner){
             status = 'Winner: ' + winner;
         }else{
-            status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O') + "Count: " + this.state.stepNumber;
+            status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
         }
         if(!winner && this.state.stepNumber === 9){
             status = "There is no winner in this game. It´s a draw !";
@@ -138,6 +162,7 @@ class Game extends React.Component{
                     />
                 </div>
                 <div className="game-info">
+                    <ToggleHistoryButton />
                     <div>{status}</div>
                     <ul>{moves}</ul>
                 </div>
