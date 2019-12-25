@@ -19,6 +19,26 @@
 
 ---
 
+### Day 11: 2019-12-25
+
+**Today´s Progress:** Implemented optional feature 4 with help/inspiration from [https://github.com/kelanwu/react-tic-tac-toe](https://github.com/kelanwu/react-tic-tac-toe)
+
+**Thoughts:** I got some help/inspiration from the repo of GitHub User [https://github.com/kelanwu](https://github.com/kelanwu)
+
+**Link to work:** [My 100 Days of code-repo](https://github.com/Brianmanden/100-days-of-code)
+
+---
+
+### Day 10: 2019-12-24
+
+**Today´s Progress:** Implemented optional feature 6. I started working on setting button value using state.
+
+**Thoughts:** I haven´t quite figured out how to use state the best way.. yet :)
+
+**Link to work:** [My 100 Days of code-repo](https://github.com/Brianmanden/100-days-of-code)
+
+---
+
 ### Day 9: 2019-12-23
 
 **Today´s Progress:** Implemented 3rd optional feature - refactoring to using two nested loops instead of hardcoded board.
