@@ -4,30 +4,6 @@ import './index.css';
 
 let winningCombination = [];
 
-class ToggleHistoryButton extends React.Component{
-    // HERE !
-    state = {
-        sortOrder: true
-    }
-
-    handleClick(){
-        console.log(this.state);        
-        this.setState({
-            sortOrder : this.state.sortOrder ? false : true
-        });
-        console.log(this.state.sortOrder);
-    }
-
-    render(){
-        return(
-            <button
-                onClick={this.handleClick}>
-                {this.state.sortOrder}
-            </button>
-        );
-    }
-}
-
 function Square(props){
     let classNames = props.currentMove === true ? "square currentMoveSquare" : "square";
     classNames += props.winningSquare === true ? " winningSquare" : "";
@@ -77,6 +53,7 @@ class Game extends React.Component{
             coordinates: [{
                 coords: [null, null],
             }],
+            isAscending: true,
             stepNumber: 0,
             xIsNext: true,
         };
@@ -113,12 +90,19 @@ class Game extends React.Component{
         });
     }
 
+    handleSortToggle(){
+        this.setState({
+            isAscending: !this.state.isAscending
+        });
+    }
+
     render(){
         const history = this.state.history;
         const current = history[this.state.stepNumber];
         const previous = this.state.stepNumber === 0 ? history[0] : history[this.state.stepNumber - 1];
         const winner = calculateWinner(current.squares);
         const currentMove = compareSteps(current, previous);
+        const isAscending = this.state.isAscending;
 
         const moves = history.map((step, move) => {
             const coords = this.state.coordinates[move];
@@ -151,6 +135,10 @@ class Game extends React.Component{
             status = "There is no winner in this game. It´s a draw !";
         }
 
+        if(!isAscending){
+            moves.reverse();
+        }
+
         return(
             <div className="game">
                 <div className="game-board">
@@ -162,8 +150,12 @@ class Game extends React.Component{
                     />
                 </div>
                 <div className="game-info">
-                    <ToggleHistoryButton />
                     <div>{status}</div>
+                    <button
+                        className="toggleBtn"
+                        onClick={() => this.handleSortToggle()}>
+                        {isAscending ? 'DESC' : 'ASC'}
+                    </button>
                     <ul>{moves}</ul>
                 </div>
             </div>
