@@ -19,6 +19,16 @@
 
 ---
 
+### Day 12: 2019-12-25
+
+**Today´s Progress:** Added up and down arrows and text to specify sorting order of history items. Started a new React project - a memory game.
+
+**Thoughts:** Learned about how to use HTML Entities in JSX from [https://shripadk.github.io/react/docs/jsx-gotchas.html](https://shripadk.github.io/react/docs/jsx-gotchas.html)
+
+**Link to work:** [My 100 Days of code-repo](https://github.com/Brianmanden/100-days-of-code)
+
+---
+
 ### Day 11: 2019-12-25
 
 **Today´s Progress:** Implemented optional feature 4 with help/inspiration from [https://github.com/kelanwu/react-tic-tac-toe](https://github.com/kelanwu/react-tic-tac-toe)
