@@ -19,11 +19,11 @@
 
 ---
 
-### Day 12: 2019-12-25
+### Day 12: 2019-12-26
 
-**Today´s Progress:** Added up and down arrows and text to specify sorting order of history items. Started a new React project - a memory game.
+**Today´s Progress:** Added up and down arrows and text to specify sorting order of history items. Started a new React project - a memory game. UPDATE: I added and got some code working. The code can now shuffle a deck of cards. Thanks goes out to @filsmyth for providing me with images of his kitties :)
 
-**Thoughts:** Learned about how to use HTML Entities in JSX from [https://shripadk.github.io/react/docs/jsx-gotchas.html](https://shripadk.github.io/react/docs/jsx-gotchas.html)
+**Thoughts:** Learned about how to use HTML Entities in JSX from [https://shripadk.github.io/react/docs/jsx-gotchas.html](https://shripadk.github.io/react/docs/jsx-gotchas.html). Concatenating using a system parameter proved to be a bit of trouble but I got it working :)
 
 **Link to work:** [My 100 Days of code-repo](https://github.com/Brianmanden/100-days-of-code)
 
