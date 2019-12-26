@@ -151,10 +151,11 @@ class Game extends React.Component{
                 </div>
                 <div className="game-info">
                     <div>{status}</div>
+                    <p>Showing history in {isAscending ? 'ascending' + String.fromCharCode(8595) : 'descending' + String.fromCharCode(8593)} order.</p>
                     <button
                         className="toggleBtn"
                         onClick={() => this.handleSortToggle()}>
-                        {isAscending ? 'DESC' : 'ASC'}
+                        Switch to: {isAscending ? 'DESC' + String.fromCharCode(8593) : 'ASC' + String.fromCharCode(8595)}
                     </button>
                     <ul>{moves}</ul>
                 </div>
