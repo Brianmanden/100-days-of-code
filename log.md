@@ -19,6 +19,16 @@
 
 ---
 
+### Day 13: 2019-12-27
+
+**Today´s Progress:** Refactored a bit and added control for a matching couple of selected cards.
+
+**Thoughts:** Maybe control logic needs to be refactored.
+
+**Link to work:** [My 100 Days of code-repo](https://github.com/Brianmanden/100-days-of-code)
+
+---
+
 ### Day 12: 2019-12-26
 
 **Today´s Progress:** Added up and down arrows and text to specify sorting order of history items. Started a new React project - a memory game. UPDATE: I added and got some code working. The code can now shuffle a deck of cards. Thanks goes out to @filsmyth for providing me with images of his kitties :)
