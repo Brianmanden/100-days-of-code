@@ -8,15 +8,31 @@ body{
     flex-direction: row;
 }
 
+.game-board{
+    width: 720px;
+}
+
 .game-info{
     margin-left: 20px;
 }
 
 .card{
-    border-radius: 3px;
-    height: 120px;
     border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
     box-shadow: 5px 8px 15px 2px rgba(0, 0, 0, 0.4);
-    margin: 10px 0;
+    cursor: pointer;
+    display: inline-flex;
+    height: 120px;
+    margin: 20px;
+    padding: 15px;
     width: 150px;
+}
+
+.card:hover{
+    box-shadow: 5px 8px 15px 2px rgba(0, 0, 0, 0.5);
+}
+
+.card img{
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 7px;
 }
