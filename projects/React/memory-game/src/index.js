@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 function Card(props){
-    const imageURI = process.env.PUBLIC_URL + props.imagePath;
+    const imageURI = process.env.PUBLIC_URL + props.imageSrc;
     const cardText = "Card " + props.index;
 
     return(
         <div
             className="card"
-            key={props.imagePath + "_" + props.index}
+            key={props.imageSrc + "_" + props.index}
             onClick={props.onClick}>
             <img src={imageURI} alt={cardText} title={cardText} />
         </div>
@@ -17,26 +17,34 @@ function Card(props){
 }
 
 class Board extends React.Component{
-    renderCard(imagePath, index){
+    renderCard(imageSrc, index){
         return(
             <Card
-                imagePath={imagePath}
+                imageSrc={imageSrc}
                 key={"key_" + index}
                 index={index}
-                onClick={() => this.props.onClick(imagePath, index)}
+                onClick={() => this.props.onClick(imageSrc, index)}
             />
         );
     }
 
-    render(){ 
-        return(
-            this.props.images.map((imageSrc, index) => {           
-                return(            
+    render(){
+        return(            
+            [0, 1, 2, 3].map((row) => {
+                return(
                     <div
                         className="board-row"
-                        key={index+"abc"}
+                        key={row}
                     >
-                        {this.renderCard(imageSrc, index)}
+                        {
+                            [0, 1, 2]
+                            .map(
+                                (col) => {
+                                    const index = row * 3 + col;
+                                    const imageSrc = this.props.images[index];                                    
+                                    return this.renderCard(imageSrc, index);
+                            })
+                        }
                     </div>
                 );
             })
@@ -53,6 +61,7 @@ class Game extends React.Component{
             '/assets/kitty03.png',
             '/assets/kitty04.png',
             '/assets/skeleton01.png',
+            '/assets/grumpy01.png',
         ];
         const doubleCardSet = cardImagePaths.concat(cardImagePaths);
 
