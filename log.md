@@ -19,6 +19,16 @@
 
 ---
 
+### Day 14: 2019-12-28
+
+**Today´s Progress:** I added Grumpy Cat to the images :) I refactored cards and styles for them - now they are positioned in rows and coloumns and have a hover effect.
+
+**Thoughts:** Next feature to implement will be a flip-effect like the one here: [https://www.w3schools.com/howto/howto_css_flip_card.asp](https://www.w3schools.com/howto/howto_css_flip_card.asp)
+
+**Link to work:** [My 100 Days of code-repo](https://github.com/Brianmanden/100-days-of-code)
+
+---
+
 ### Day 13: 2019-12-27
 
 **Today´s Progress:** Refactored a bit and added control for a matching couple of selected cards.
