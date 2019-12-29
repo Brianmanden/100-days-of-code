@@ -4,11 +4,13 @@ import './index.css';
 
 function Card(props){
     const imageURI = process.env.PUBLIC_URL + props.imageSrc;
-    const cardText = "Card " + props.index;
+    const cardText = "Card " + (props.index + 1);
+    const classNames = props.clicked ? "card flipped" : "card";
+    console.log(props);
 
     return(
         <div
-            className="card"
+            className={classNames}
             key={props.imageSrc + "_" + props.index}
             onClick={props.onClick}>
                 <div className="card-front">
@@ -25,9 +27,10 @@ class Board extends React.Component{
     renderCard(imageSrc, index){
         return(
             <Card
+                clicked={this.props.clicked[1] === index ? true : false}
                 imageSrc={imageSrc}
-                key={"key_" + index}
                 index={index}
+                key={"key_" + index}
                 onClick={() => this.props.onClick(imageSrc, index)}
             />
         );
@@ -73,7 +76,7 @@ class Game extends React.Component{
         this.state = {
             cardImages: shuffleCards(doubleCardSet),
             clickedCard: [],
-            status: ""
+            status: "",
         };
     }
 
@@ -112,6 +115,7 @@ class Game extends React.Component{
                 <div className="game-board">
                     <Board
                         images={this.state.cardImages}
+                        clicked={this.state.clickedCard}
                         onClick={(cardImage, index) => this.handleClick(cardImage, index)}
                     />
                 </div>
