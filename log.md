@@ -19,7 +19,7 @@
 
 ---
 
-### Day X: 2019-12-29
+### Day 15: 2019-12-29
 
 **Today´s Progress:** I worked a bit on the flip cards, styles and logic. I am pretty pleased with the looks of them :)
 
