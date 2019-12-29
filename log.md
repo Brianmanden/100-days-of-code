@@ -19,6 +19,16 @@
 
 ---
 
+### Day X: 2019-12-29
+
+**Today´s Progress:** I worked a bit on the flip cards, styles and logic. I am pretty pleased with the looks of them :)
+
+**Thoughts:** I still have to do some work on the logic around how the game works.
+
+**Link to work:** [My 100 Days of code-repo](https://github.com/Brianmanden/100-days-of-code)
+
+---
+
 ### Day 14: 2019-12-28
 
 **Today´s Progress:** I added Grumpy Cat to the images :) I refactored cards and styles for them - now they are positioned in rows and coloumns and have a hover effect.
