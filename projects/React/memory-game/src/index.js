@@ -11,7 +11,12 @@ function Card(props){
             className="card"
             key={props.imageSrc + "_" + props.index}
             onClick={props.onClick}>
-            <img src={imageURI} alt={cardText} title={cardText} />
+                <div className="card-front">
+                    <p>{props.index + 1}</p>
+                </div>
+                <div className="card-back">
+                    <img src={imageURI} alt={cardText} title={cardText} />
+                </div>
         </div>
     );
 }

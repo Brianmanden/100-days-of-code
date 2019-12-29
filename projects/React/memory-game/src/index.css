@@ -1,20 +1,7 @@
-body{
-    font: 14px "Century Gothic", Futura, sans-serif;
-    margin: 20px;
-}
-
-.game{
-    display: flex;
-    flex-direction: row;
-}
-
-.game-board{
-    width: 720px;
-}
-
-.game-info{
-    margin-left: 20px;
-}
+body{ font: 14px "Century Gothic", Futura, sans-serif; margin: 20px; }
+.game{ display: flex; flex-direction: row; }
+.game-board{ width: 720px; }
+.game-info{ margin-left: 20px; }
 
 .card{
     border: 1px solid rgba(0, 0, 0, 0.2);
@@ -25,14 +12,38 @@ body{
     height: 120px;
     margin: 20px;
     padding: 15px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
     width: 150px;
 }
 
 .card:hover{
     box-shadow: 5px 8px 15px 2px rgba(0, 0, 0, 0.5);
+    transform: rotateY(180deg);
 }
 
-.card img{
+.card-front, card-back{
+    backface-visibility: hidden;
+    border-radius: 7px;
+    height: 51%;
+    padding: 15px;
+    position: absolute;
+    width: 67%;
+}
+
+.card-front{
+    background-color: green;
+    color: #fff;
+    font-size: 150%;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.card-back{
+    transform: rotateY(180deg);
+}
+
+.card-back img{
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 7px;
 }
