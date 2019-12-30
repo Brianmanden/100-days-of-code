@@ -6,7 +6,6 @@ function Card(props){
     const imageURI = process.env.PUBLIC_URL + props.imageSrc;
     const cardText = "Card " + (props.index + 1);
     const classNames = props.clicked ? "card flipped" : "card";
-    console.log(props);
 
     return(
         <div
@@ -27,7 +26,7 @@ class Board extends React.Component{
     renderCard(imageSrc, index){
         return(
             <Card
-                clicked={this.props.clicked[1] === index ? true : false}
+                clicked={this.props.clicked.includes(index)}
                 imageSrc={imageSrc}
                 index={index}
                 key={"key_" + index}
@@ -75,37 +74,39 @@ class Game extends React.Component{
 
         this.state = {
             cardImages: shuffleCards(doubleCardSet),
-            clickedCard: [],
-            status: "",
+            clickedCardsIndeces: [],
+            clickedCardsImages: [],
+            status: ""
         };
     }
 
     handleClick(cardImage, index){
-        console.log(cardImage, index, this.state.clickedCard);
-        if(this.state.clickedCard.length > 0){
-            // return if clicking on same card multiple times
-            if(this.state.clickedCard[1] === index){
-                console.log("-1-", "multiple clicks");
-                return;
-            }
-            // check for match
-            if(this.state.clickedCard[0] === cardImage){
-                console.log("-2-", "match");
-                this.setState({
-                    status: "match found"
-                });
-            }else{
-                this.setState({
-                    clickedCard: []
-                });                
-            }
-        }
-        //
-        else{
+        const indeces = this.state.clickedCardsIndeces;
+        if(indeces.includes(index)){
+            console.log("Already clicked - do nothing");
+        }else{
             this.setState({
-                clickedCard: [cardImage, index]
+                clickedCardsIndeces: [...indeces, index],
+                clickedCardsImages: [...this.state.clickedCardsImages, cardImage]
             });
-            return;
+        }
+        
+        // HERE
+        if(this.state.clickedCardsIndeces.length === 1){
+            if(this.state.clickedCardsImages[0] === cardImage){
+                console.log("match");
+                this.setState({
+                    status: "You found a matching pair of cards."
+                });
+            }
+            // else{
+            //     console.log("no match");
+            //     console.log(this.state.clickedCardsImages);
+            //     // this.setState({
+            //     //     clickedCardsIndeces: [],
+            //     //     clickedCardsImages: []
+            //     // });
+            // }
         }
     }
 
@@ -114,8 +115,8 @@ class Game extends React.Component{
             <div className="game">
                 <div className="game-board">
                     <Board
+                        clicked={this.state.clickedCardsIndeces}
                         images={this.state.cardImages}
-                        clicked={this.state.clickedCard}
                         onClick={(cardImage, index) => this.handleClick(cardImage, index)}
                     />
                 </div>
