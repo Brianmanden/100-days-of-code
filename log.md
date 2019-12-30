@@ -19,6 +19,16 @@
 
 ---
 
+### Day 16: 2019-12-30
+
+**Today´s Progress:** I refactored the game logic a bit.
+
+**Thoughts:** There is still some work to do with the game logic. Too tired to fix it now :)
+
+**Link to work:** [My 100 Days of code-repo](https://github.com/Brianmanden/100-days-of-code)
+
+---
+
 ### Day 15: 2019-12-29
 
 **Today´s Progress:** I worked a bit on the flip cards, styles and logic. I am pretty pleased with the looks of them :)
