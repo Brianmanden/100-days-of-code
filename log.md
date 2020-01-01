@@ -7,11 +7,11 @@
 
 >Start - Day snippet
 
-### Day X: 2019-
+### Day 17: 2019-12-31
 
-**Today´s Progress:**
+**Today´s Progress:** No coding - no progress. New Years eve.
 
-**Thoughts:**
+**Thoughts:** None at all :)
 
 **Link to work:** [My 100 Days of code-repo](https://github.com/Brianmanden/100-days-of-code)
 
