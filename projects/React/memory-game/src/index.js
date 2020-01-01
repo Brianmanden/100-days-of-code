@@ -5,7 +5,9 @@ import './index.css';
 function Card(props){
     const imageURI = process.env.PUBLIC_URL + props.imageSrc;
     const cardText = "Card " + (props.index + 1);
-    const classNames = props.clicked ? "card flipped" : "card";
+    let classNames = "card ";
+    classNames += props.clicked ? "flipped " : "";
+    classNames += props.locked ? "locked " : "";
 
     return(
         <div
@@ -30,6 +32,7 @@ class Board extends React.Component{
                 imageSrc={imageSrc}
                 index={index}
                 key={"key_" + index}
+                locked={this.props.locked.includes(index)}
                 onClick={() => this.props.onClick(imageSrc, index)}
             />
         );
@@ -76,14 +79,21 @@ class Game extends React.Component{
             cardImages: shuffleCards(doubleCardSet),
             clickedCardsIndeces: [],
             clickedCardsImages: [],
+            lockedCards: [],
+            lockedForClicks: false,
             status: ""
         };
     }
 
     handleClick(cardImage, index){
+        if(this.state.lockedForClicks || this.state.lockedCards.includes(index)){
+            console.log("locked");
+            return;
+        }
         const indeces = this.state.clickedCardsIndeces;
+        // check for clicking same card over and over
         if(indeces.includes(index)){
-            console.log("Already clicked - do nothing");
+            return;
         }else{
             this.setState({
                 clickedCardsIndeces: [...indeces, index],
@@ -91,22 +101,39 @@ class Game extends React.Component{
             });
         }
         
-        // HERE
-        if(this.state.clickedCardsIndeces.length === 1){
+        if(indeces.length === 1){
             if(this.state.clickedCardsImages[0] === cardImage){
                 console.log("match");
+
                 this.setState({
-                    status: "You found a matching pair of cards."
+                    lockedCards: [
+                        ...this.state.lockedCards,
+                        this.state.lockedCards.indexOf(this.state.clickedCardsIndeces[0]) === -1 ? this.state.clickedCardsIndeces[0] : null,
+                        this.state.lockedCards.indexOf(index) === -1 ? index : null],
+                    lockedForClicks: true,
+                    status: "You found a matching pair of cards.",
                 });
+                             
+                setTimeout(() => {
+                        console.log("lock = false");
+                        this.setState({
+                            clickedCardsIndeces: [],
+                            clickedCardsImages: [],
+                            lockedForClicks: false
+                        });
+                    },
+                    1500
+                );
+                
+            }else{
+                setTimeout(() => {
+                        this.setState({
+                            clickedCardsIndeces: [],
+                            clickedCardsImages: []
+                        });
+                    }, 1500
+                );
             }
-            // else{
-            //     console.log("no match");
-            //     console.log(this.state.clickedCardsImages);
-            //     // this.setState({
-            //     //     clickedCardsIndeces: [],
-            //     //     clickedCardsImages: []
-            //     // });
-            // }
         }
     }
 
@@ -117,11 +144,17 @@ class Game extends React.Component{
                     <Board
                         clicked={this.state.clickedCardsIndeces}
                         images={this.state.cardImages}
+                        locked={this.state.lockedCards}
                         onClick={(cardImage, index) => this.handleClick(cardImage, index)}
                     />
                 </div>
-                <div className="game-info">
-                <div>status: {this.state.status}</div>
+                <div className="game-info"></div>
+                <div>
+                    status: {this.state.status}<br />
+                    locked: {this.state.lockedForClicks}<br />
+                    clickedCardsIndeces: {this.state.clickedCardsIndeces}<br />
+                    clickedCardsImages: {this.state.clickedCardsImages}<br />
+                    lockedCards: {this.state.lockedCards}<br />
                 </div>
             </div>
         );
