@@ -7,6 +7,28 @@
 
 >Start - Day snippet
 
+### Day X: 2020-
+
+**Today´s Progress:**
+
+**Thoughts:**
+
+**Link to work:** [My 100 Days of code-repo](https://github.com/Brianmanden/100-days-of-code)
+
+>End - Day snippet
+
+---
+
+### Day 18: 2020-01-01
+
+**Today´s Progress:** I added a locked state and style for card. I improved on the game logic. 
+
+**Thoughts:** The game is slowly becoming better :)
+
+**Link to work:** [My 100 Days of code-repo](https://github.com/Brianmanden/100-days-of-code)
+
+---
+
 ### Day 17: 2019-12-31
 
 **Today´s Progress:** No coding - no progress. New Years eve.
@@ -14,8 +36,6 @@
 **Thoughts:** None at all :)
 
 **Link to work:** [My 100 Days of code-repo](https://github.com/Brianmanden/100-days-of-code)
-
->End - Day snippet
 
 ---
 
