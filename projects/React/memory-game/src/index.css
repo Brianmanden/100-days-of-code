@@ -21,6 +21,11 @@ body{ font: 14px "Century Gothic", Futura, sans-serif; margin: 20px; }
     box-shadow: 5px 8px 15px 2px rgba(0, 0, 0, 0.5);
 }
 
+.locked{
+    opacity: 0.5;
+    transform: rotateY(180deg);
+}
+
 .flipped{
     transform: rotateY(180deg);
 }
