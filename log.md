@@ -19,6 +19,16 @@
 
 ---
 
+### Day 19: 2020-01-02
+
+**Today´s Progress:** Added a bit more game logic. Reworked styles to prevent images from being shown if user dragged card.
+
+**Thoughts:** Game logic is steadily growing complex maybe React Hooks can be used to simplify ?
+
+**Link to work:** [My 100 Days of code-repo](https://github.com/Brianmanden/100-days-of-code)
+
+---
+
 ### Day 18: 2020-01-01
 
 **Today´s Progress:** I added a locked state and style for card. I improved on the game logic. 
