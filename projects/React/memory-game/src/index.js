@@ -79,20 +79,39 @@ class Game extends React.Component{
             cardImages: shuffleCards(doubleCardSet),
             clickedCardsIndeces: [],
             clickedCardsImages: [],
+            foundPairs: 0,
             lockedCards: [],
             lockedForClicks: false,
-            status: ""
+            running: false,
+            status: "",
+            time: 0
         };
     }
 
-    handleClick(cardImage, index){
+    timer(){
+        if(this.state.running){
+            return;
+        }
+
+        setInterval(() => {
+            console.log("tick");
+            this.setState({
+                time: this.state.time + 1
+            });
+        }, 1000);
+        this.setState({
+            running: true
+        });
+    }
+
+    handleClick(cardImage, index){ 
         if(this.state.lockedForClicks || this.state.lockedCards.includes(index)){
             console.log("locked");
             return;
         }
         const indeces = this.state.clickedCardsIndeces;
         // check for clicking same card over and over
-        if(indeces.includes(index)){
+        if(indeces.includes(index) || indeces.length > 1){
             return;
         }else{
             this.setState({
@@ -106,32 +125,40 @@ class Game extends React.Component{
                 console.log("match");
 
                 this.setState({
+                    foundPairs: this.state.foundPairs + 1,
                     lockedCards: [
                         ...this.state.lockedCards,
                         this.state.lockedCards.indexOf(this.state.clickedCardsIndeces[0]) === -1 ? this.state.clickedCardsIndeces[0] : null,
                         this.state.lockedCards.indexOf(index) === -1 ? index : null],
                     lockedForClicks: true,
-                    status: "You found a matching pair of cards.",
+                    status: "You found a matching pair of cards!",
                 });
-                             
+
+                console.log(this.state.lockedCards);                
+                console.log(this);
                 setTimeout(() => {
                         console.log("lock = false");
                         this.setState({
                             clickedCardsIndeces: [],
                             clickedCardsImages: [],
-                            lockedForClicks: false
+                            lockedForClicks: false,
+                            status: this.state.lockedCards.length === this.state.clickedCardsImages.length ? "You found them all" : ""
                         });
-                    },
-                    1500
+                    }, 700
                 );
                 
             }else{
+                this.setState({
+                    status: "Those cards are not a match"
+                });
+                console.log(this);                
                 setTimeout(() => {
                         this.setState({
                             clickedCardsIndeces: [],
-                            clickedCardsImages: []
+                            clickedCardsImages: [],
+                            status: ""
                         });
-                    }, 1500
+                    }, 700
                 );
             }
         }
@@ -154,7 +181,16 @@ class Game extends React.Component{
                     locked: {this.state.lockedForClicks}<br />
                     clickedCardsIndeces: {this.state.clickedCardsIndeces}<br />
                     clickedCardsImages: {this.state.clickedCardsImages}<br />
+                    found pairs: {this.state.foundPairs}<br />
                     lockedCards: {this.state.lockedCards}<br />
+                    lockedCards: {this.state.lockedCards.length}<br />
+                    time: {this.state.time}<br />
+                    {this.state.lockedCards.length > 10 &&
+                        <button
+                            onClick={() => console.log("new game") }>
+                            Start new game
+                        </button>
+                    }
                 </div>
             </div>
         );

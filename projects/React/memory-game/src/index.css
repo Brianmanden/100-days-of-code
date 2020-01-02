@@ -21,8 +21,13 @@ body{ font: 14px "Century Gothic", Futura, sans-serif; margin: 20px; }
     box-shadow: 5px 8px 15px 2px rgba(0, 0, 0, 0.5);
 }
 
+.card:hover .locked{
+    box-shadow: unset;
+    outline: 1px solid red;
+}
+
 .locked{
-    opacity: 0.5;
+    opacity: 0.8;
     transform: rotateY(180deg);
 }
 
@@ -45,6 +50,7 @@ body{ font: 14px "Century Gothic", Futura, sans-serif; margin: 20px; }
     font-size: 150%;
     padding-top: 30px;
     text-align: center;
+    user-select: none;
 }
 
 .card-back{
@@ -54,4 +60,5 @@ body{ font: 14px "Century Gothic", Futura, sans-serif; margin: 20px; }
 .card-back img{
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 7px;
+    pointer-events: none;
 }
