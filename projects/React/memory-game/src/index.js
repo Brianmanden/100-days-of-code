@@ -65,48 +65,13 @@ class Board extends React.Component{
 class Game extends React.Component{
     constructor(props){
         super(props);
-        const cardImagePaths = [
-            '/assets/kitty01.png',
-            '/assets/kitty02.png',
-            '/assets/kitty03.png',
-            '/assets/kitty04.png',
-            '/assets/skeleton01.png',
-            '/assets/grumpy01.png',
-        ];
-        const doubleCardSet = cardImagePaths.concat(cardImagePaths);
-
-        this.state = {
-            cardImages: shuffleCards(doubleCardSet),
-            clickedCardsIndeces: [],
-            clickedCardsImages: [],
-            foundPairs: 0,
-            lockedCards: [],
-            lockedForClicks: false,
-            running: false,
-            status: "",
-            time: 0
-        };
-    }
-
-    timer(){
-        if(this.state.running){
-            return;
-        }
-
-        setInterval(() => {
-            console.log("tick");
-            this.setState({
-                time: this.state.time + 1
-            });
-        }, 1000);
-        this.setState({
-            running: true
-        });
+        this.handleClick = this.handleClick.bind(this);
+        this.newGame = this.newGame.bind(this);
+        this.initGame();
     }
 
     handleClick(cardImage, index){ 
         if(this.state.lockedForClicks || this.state.lockedCards.includes(index)){
-            console.log("locked");
             return;
         }
         const indeces = this.state.clickedCardsIndeces;
@@ -125,7 +90,6 @@ class Game extends React.Component{
                 console.log("match");
 
                 this.setState({
-                    foundPairs: this.state.foundPairs + 1,
                     lockedCards: [
                         ...this.state.lockedCards,
                         this.state.lockedCards.indexOf(this.state.clickedCardsIndeces[0]) === -1 ? this.state.clickedCardsIndeces[0] : null,
@@ -134,15 +98,13 @@ class Game extends React.Component{
                     status: "You found a matching pair of cards!",
                 });
 
-                console.log(this.state.lockedCards);                
-                console.log(this);
                 setTimeout(() => {
                         console.log("lock = false");
                         this.setState({
                             clickedCardsIndeces: [],
                             clickedCardsImages: [],
                             lockedForClicks: false,
-                            status: this.state.lockedCards.length === this.state.clickedCardsImages.length ? "You found them all" : ""
+                            status: this.state.lockedCards.length === this.state.cardImages.length ? "You found them all" : ""
                         });
                     }, 700
                 );
@@ -150,8 +112,7 @@ class Game extends React.Component{
             }else{
                 this.setState({
                     status: "Those cards are not a match"
-                });
-                console.log(this);                
+                });          
                 setTimeout(() => {
                         this.setState({
                             clickedCardsIndeces: [],
@@ -162,6 +123,29 @@ class Game extends React.Component{
                 );
             }
         }
+    }
+
+    initGame(){
+        const cardImagePaths = [
+            '/assets/kitty01.png',
+            '/assets/kitty02.png',
+            '/assets/kitty03.png',
+            '/assets/kitty04.png',
+            '/assets/skeleton01.png',
+            '/assets/grumpy01.png',
+        ];
+        const doubleCardSet = cardImagePaths.concat(cardImagePaths);
+
+        this.state = {
+            cardImages: shuffleCards(doubleCardSet),
+            clickedCardsIndeces: [],
+            clickedCardsImages: [],
+            lockedCards: [],
+            lockedForClicks: false,
+            running: false,
+            status: "",
+            time: 0
+        };
     }
 
     render(){
@@ -181,13 +165,13 @@ class Game extends React.Component{
                     locked: {this.state.lockedForClicks}<br />
                     clickedCardsIndeces: {this.state.clickedCardsIndeces}<br />
                     clickedCardsImages: {this.state.clickedCardsImages}<br />
-                    found pairs: {this.state.foundPairs}<br />
+                    You have found {(this.state.lockedCards.length / 2) > 0 ? (this.state.lockedCards.length / 2) : 0} {(this.state.lockedCards.length / 2) === 1 ? "pair" : "pairs"}.<br />
                     lockedCards: {this.state.lockedCards}<br />
                     lockedCards: {this.state.lockedCards.length}<br />
                     time: {this.state.time}<br />
                     {this.state.lockedCards.length > 10 &&
                         <button
-                            onClick={() => console.log("new game") }>
+                            onClick={() => this.newGame()}>
                             Start new game
                         </button>
                     }
@@ -195,12 +179,33 @@ class Game extends React.Component{
             </div>
         );
     }
+
+    newGame(){
+        console.log("new game");
+        this.initGame();
+        //this.timer();
+    }
+
+    // timer(){
+    //     if(this.state.running){
+    //         return;
+    //     }
+
+    //     setInterval(() => {
+    //         console.log("tick");
+    //         this.setState({
+    //             time: this.state.time + 1
+    //         });
+    //     }, 1000);
+    //     this.setState({
+    //         running: true
+    //     });
+    // }
 }
 
 /*
     helper methods
 */
-
 // SOURCE: https://javascript.info/task/shuffle
 function shuffleCards(array){
     for(let i = array.length - 1; i > 0; i--){

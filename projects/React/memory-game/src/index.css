@@ -54,6 +54,8 @@ body{ font: 14px "Century Gothic", Futura, sans-serif; margin: 20px; }
 }
 
 .card-back{
+    background-color: #40a020;
+    border-radius: 7px;
     transform: rotateY(180deg);
 }
 
