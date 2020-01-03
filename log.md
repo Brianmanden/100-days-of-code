@@ -19,6 +19,16 @@
 
 ---
 
+### Day 20: 2020-01-03
+
+**Today´s Progress:** Refactored some game logic.
+
+**Thoughts:** Ran into a problem with correct state not being shown in view when updated.
+
+**Link to work:** [My 100 Days of code-repo](https://github.com/Brianmanden/100-days-of-code)
+
+---
+
 ### Day 19: 2020-01-02
 
 **Today´s Progress:** Added a bit more game logic. Reworked styles to prevent images from being shown if user dragged card.
@@ -31,7 +41,7 @@
 
 ### Day 18: 2020-01-01
 
-**Today´s Progress:** I added a locked state and style for card. I improved on the game logic. 
+**Today´s Progress:** I added a locked state and style for card. I improved on the game logic.
 
 **Thoughts:** The game is slowly becoming better :)
 
