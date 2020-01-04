@@ -67,7 +67,7 @@ class Game extends React.Component{
         super(props);
         this.handleClick = this.handleClick.bind(this);
         this.newGame = this.newGame.bind(this);
-        this.initGame();
+        this.initGame = this.initGame.bind(this);
     }
 
     handleClick(cardImage, index){ 
@@ -126,6 +126,7 @@ class Game extends React.Component{
     }
 
     initGame(){
+        console.log("-1-");
         const cardImagePaths = [
             '/assets/kitty01.png',
             '/assets/kitty02.png',
@@ -146,6 +147,8 @@ class Game extends React.Component{
             status: "",
             time: 0
         };
+        console.log("-2-");
+        console.log(this.state);        
     }
 
     render(){
