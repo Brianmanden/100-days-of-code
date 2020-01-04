@@ -19,6 +19,16 @@
 
 ---
 
+### Day 21: 2020-01-04
+
+**Today´s Progress:** I have been moving/forking the game to Heroku and been able to refactor to restart game.
+
+**Thoughts:** I have some trouble getting the new Heroku git repo to work.
+
+**Link to work:** [My 100 Days of code-repo](https://github.com/Brianmanden/100-days-of-code)
+
+---
+
 ### Day 20: 2020-01-03
 
 **Today´s Progress:** Refactored some game logic.
