@@ -19,6 +19,16 @@
 
 ---
 
+### Day 22: 2020-01-05
+
+**Today´s Progress:** I got some bugs fixed occouring in Edge and Firefox. I reworked styles and UX a bit.
+
+**Thoughts:** I still need (more) testers :)
+
+**Link to work:** [My 100 Days of code-repo](https://github.com/Brianmanden/100-days-of-code)
+
+---
+
 ### Day 21: 2020-01-04
 
 **Today´s Progress:** I have been moving/forking the game to Heroku and been able to refactor to restart game.
