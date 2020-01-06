@@ -19,6 +19,16 @@
 
 ---
 
+### Day 23: 2020-01-06
+
+**Today´s Progress:** I refactored styles - status bar is now on top. I also made is possible to start a new game :)
+
+**Thoughts:** Still pondering how to go about having a Heroku repo inside a GitHub repo.
+
+**Link to work:** [My 100 Days of code-repo](https://github.com/Brianmanden/100-days-of-code)
+
+---
+
 ### Day 22: 2020-01-05
 
 **Today´s Progress:** I got some bugs fixed occouring in Edge and Firefox. I reworked styles and UX a bit.
