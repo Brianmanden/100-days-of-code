@@ -19,6 +19,16 @@
 
 ---
 
+### Day 24: 2020-01-07
+
+**Today´s Progress:** All images are now of @filsmyth´s cats. Minor adjustments to colors and layout.
+
+**Thoughts:** Seems there is an issue with transition hiding image until transition is complete.
+
+**Link to work:** [https://reactmemorygamewithcats.herokuapp.com/](https://reactmemorygamewithcats.herokuapp.com/)
+
+---
+
 ### Day 23: 2020-01-06
 
 **Today´s Progress:** I refactored styles - status bar is now on top. I also made is possible to start a new game :)
