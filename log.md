@@ -19,6 +19,36 @@
 
 ---
 
+### Day 27: 2020-01-10
+
+**Today´s Progress:** Finally some progress. I have decided to build a bug tracker as adviced here: [https://www.youtube.com/watch?v=oC483DTjRXU](https://www.youtube.com/watch?v=oC483DTjRXU)
+
+**Thoughts:** Thinking about what architecture and technologies to use.
+
+**Link to work:** [My 100 Days of code-repo](https://github.com/Brianmanden/100-days-of-code)
+
+---
+
+### Day 26: 2020-01-09
+
+**Today´s Progress:** None - another day of no inpiration and no coding :/
+
+**Thoughts:**
+
+**Link to work:** [My 100 Days of code-repo](https://github.com/Brianmanden/100-days-of-code)
+
+---
+
+### Day 25: 2020-01-08
+
+**Today´s Progress:** None - lack of inpiration and no coding :/
+
+**Thoughts:**
+
+**Link to work:** [My 100 Days of code-repo](https://github.com/Brianmanden/100-days-of-code)
+
+---
+
 ### Day 24: 2020-01-07
 
 **Today´s Progress:** All images are now of @filsmyth´s cats. Minor adjustments to colors and layout.
